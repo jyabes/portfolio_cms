@@ -34,6 +34,7 @@ $recentProjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     .dashboard {
         text-align: center;
         padding: 20px;
+        margin-bottom:80px;
     }
 
     .welcome-message {
@@ -61,6 +62,12 @@ $recentProjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         margin: 0 auto;
     }
 
+    .recent-projects p {
+        /* display: inline-block; */
+        margin: 0px;
+        padding: 0px;
+    }
+
     .project-item {
         padding: 10px;
         margin-bottom: 10px;
@@ -69,20 +76,23 @@ $recentProjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         border-radius: 8px;
     }
 
+    .project-item p {
+        padding: 0 80px 0 80px;
+        font-size: 16px;
+    }
+
     .hero-section {
         background-color: #333;
         color: #fff;
-        padding: 80px;
+        padding: 50px;
         text-align: center;
-        margin-bottom: 100px;
+        margin-bottom: 20px;
     }
 
     .hero-title {
         font-size: 32px;
         margin-bottom: 20px;
     }
-
-
 
     .action-buttons a {
         display: inline-block;
@@ -92,6 +102,11 @@ $recentProjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
+    }
+
+    h1 {
+        padding: 50px 0 50px 0;
+        color: #007bff;
     }
 
     h2 {
@@ -108,11 +123,12 @@ $recentProjects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <div class="dashboard">
-        
+    <h1>You're in, Jonathan! <br> Explore your dashboard.</h1>
         <div class="hero-section">
             <div class="action-buttons">
                 <a href="project_list.php">View All Projects</a>
                 <a href="add_project.php">Add New Project</a>
+                <a href="login.php" class="logout">Logout</a>
             </div>
         </div>
 

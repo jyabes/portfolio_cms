@@ -92,6 +92,9 @@ mysqli_close($connection);
                     Ready to create something exciting together? Let’s connect!</p>
             </div>
         </div>
+        
+        
+        
 
         <div class="grid-con animate-in-right" id="reel-video">
             

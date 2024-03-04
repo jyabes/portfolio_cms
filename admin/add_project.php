@@ -45,12 +45,38 @@
 
         button {
             background-color: #007bff;
+            font-size: 15px;
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px 85px;
+            margin: 0px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
+
+        .buttons {
+        /* display: inline-block; */
+        
+        padding-top: 10px;
+    }
+
+    .buttons a {
+        font-size: 15px;
+        display: block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .button a:hover {
+        background-color: #0056b3;
+    }
+
+        
         h2 {
             margin-top: 20px;
             font-size: 24px;
@@ -66,19 +92,19 @@
 <body>
 
 <div class="container">
-    <img src="images/svg/logo_ver2b.svg" alt="Logo" class="logo">
     <h2>Add New Project</h2>
     <form action="add_project.php" method="post" enctype="multipart/form-data">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required>
-
         <label for="desc">Description:</label>
         <textarea id="desc" name="desc" required></textarea>
-
         <label for="thumb">Thumbnail Image:</label>
         <input type="file" id="thumb" name="thumb" accept="image/*" required>
-
-        <button type="submit">Add Project</button>
+        
+        <div class="buttons">
+            <button type="submit">Add Project</button>
+            <a href="dashboard.php">Back</a>
+        </div>
     </form>
 </div>
 
@@ -93,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(2, $_POST['desc'], PDO::PARAM_STR);
 
     // Handle file upload
-    $imagePath = 'images/thumbnails/'; // Set your desired path for uploaded images
+    $imagePath = 'images/thumbnails/';
     $imageName = $_FILES['thumb']['name'];
     $imageTmp = $_FILES['thumb']['tmp_name'];
     move_uploaded_file($imageTmp, $imagePath . $imageName);
