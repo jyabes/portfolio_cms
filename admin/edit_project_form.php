@@ -72,6 +72,40 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
             border-radius: 4px;
             cursor: pointer;
         }
+
+        button {
+            background-color: #007bff;
+            font-size: 15px;
+            color: #fff;
+            padding: 10px 85px;
+            margin: 0px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .buttons {
+        /* display: inline-block; */
+        
+        padding-top: 10px;
+    }
+
+    .buttons a {
+        font-size: 15px;
+        display: block;
+        padding: 10px 20px;
+        margin-top: 0px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        text-align: center;
+    }
+
+    .button a:hover {
+        background-color: #0056b3;
+    }
     </style>
 </head>
 
@@ -80,7 +114,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 <body>
 
 <form action="edit_project.php" method="POST" enctype="multipart/form-data">
-<h2>Add New Project</h2>
+<h2>Edit Project</h2>
     <input type="hidden" name="pk" value="<?php echo $row['id']; ?>">
     <label for="title">Project Title:</label>
     <input name="title" type="text" value="<?php echo $row['title']; ?>" required>
@@ -88,7 +122,11 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <input name="thumb" type="file" accept="image/*">
     <label for="desc">Project Description:</label>
     <textarea name="desc" required><?php echo $row['description']; ?></textarea>
-    <input name="submit" type="submit" value="Edit">
+    
+    <div class="buttons">
+            <input name="submit" type="submit" value="Edit">
+            <a href="dashboard.php">Back</a>
+        </div>
 </form>
 
 <?php

@@ -45,6 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        h1 {
+            color: #007bff;
+        }
+
         form {
             max-width: 300px;
             margin: 0 auto;
@@ -80,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <div class="container">
+<h1>Welcome to Your Dashboard, <br>Jonathan Yabes</h1>
     <h2>Login</h2>
     <form action="login.php" method="post">
         <label for="username">Username:</label>

@@ -24,7 +24,7 @@ $stmt->execute();
             width: 80%;
             margin: 20px auto;
             background-color: #fff;
-            padding: 20px;
+            padding: 20px 20px 50px 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -32,10 +32,14 @@ $stmt->execute();
         .project-list {
             display: flex;
             align-items: center;
-            padding: 15px;
+            padding: 0px;
             border-bottom: 1px solid #ccc;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             background-color: #fff;
+        }
+
+        .project-list p {
+            padding: 5px 100px 5px 100px;
         }
 
         .project-details {
@@ -43,6 +47,7 @@ $stmt->execute();
         }
 
         .project-actions {
+            padding: 5px 100px 5px 100px;
             display: flex;
             gap: 10px;
         }
@@ -69,10 +74,15 @@ $stmt->execute();
             text-align: center;
         }
 
+        .add-new-project-title h2 {
+            padding-top: 20px;
+        }
+
         form {
-            margin-top: 10px;
+            text-align: center;
+            margin-top: 0px;
             background-color: #fff;
-            padding: 20px;
+            padding: 20px 100px 20px 100px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -87,27 +97,61 @@ $stmt->execute();
         textarea {
             width: 100%;
             padding: 12px;
-            margin-bottom: 16px;
+            margin-bottom: 0px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
         }
 
+    
+
         input[type="submit"] {
             background-color: #007bff;
             color: #fff;
-            padding: 12px 20px;
+            
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
+            margin-bottom: 0px;
         }
 
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
+
+        /* Styling for the back button */
+        .add-project {
+        text-align: center;
+    }
+
+    .add-new-project-title {
+        margin-top: 20px;
+    }
+
+    .button {
+        /* display: inline-block; */
+        
+        padding: 0px 100px 20px 100px;
+    }
+
+    .button a {
+        display: block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .button a:hover {
+        background-color: #0056b3;
+    }
+
+        
     </style>
 </head>
 <body>
@@ -130,20 +174,20 @@ $stmt->execute();
     $stmt = null;
     ?>
 
-    <h2>Add a New Project</h2>
-    <form action="add_project.php" method="post">
-        <label for="title">Project Title:</label>
-        <input name="title" type="text" required>
+<section class="add-project">
+    <div class="add-new-project-title">
+        <h2>Add a New Project</h2>
+        <div class="button">
+            <a href="add_project.php">Add Project Page</a>
+        </div>
 
-        <label for="thumb">Project Thumbnail:</label>
-        <input name="thumb" type="text" required>
+        <div class="button">
+            <a href="dashboard.php">Back</a>
+        </div>
+        </form>
+    </div>
+<section>
 
-        <label for="desc">Project Description:</label>
-        <textarea name="desc" required></textarea>
-
-        <input name="submit" type="submit" value="Add Project">
-    </form>
-</div>
 
 </body>
 </html>
